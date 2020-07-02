@@ -1,0 +1,144 @@
+/* Variables */
+:root {
+	--background-color: #f5f7f9;
+	--text-color: #333;
+	--window-border-radius: 6px;
+	--font-size: 14px;
+	--font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+		"Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji",
+		"Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+/* Helpers */
+
+* {
+	user-select: none;
+}
+
+.ml-1 {
+	margin-left: 1rem;
+}
+
+.scrollable {
+	overflow: scroll;
+	height: 20rem;
+}
+
+/* The arrow at the top of the window */
+.arrow-triangle {
+	position: absolute;
+	top: 2px;
+	left: 50%;
+	margin-left: -5px;
+	height: 10px;
+	width: 10px;
+	transform: rotate(45deg);
+	background-color: var(--background-color);
+}
+
+.window {
+	position: absolute;
+	top: 5px;
+	background-color: var(--background-color);
+	border-radius: var(--window-border-radius);
+	font-family: var(--font-family);
+	width: 90%;
+}
+
+.context-panel {
+	margin: 1rem;
+	padding-top: 1.5rem;
+	padding-bottom: 1.5rem;
+	padding-right: 1.5rem;
+	padding-left: 1rem;
+	color: #272a29;
+	display: flex;
+	justify-content: space-between;
+	cursor: pointer;
+}
+
+.context-panel:hover {
+	opacity: 0.9;
+}
+
+.context-panel.active {
+	color: white;
+	box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.12), 0 8px 28px 0 rgba(0, 0, 0, 0.24);
+}
+
+.context-panel-name {
+	font-size: 19px;
+}
+
+.context-panel-time {
+	opacity: 0.6;
+	font-size: 14px;
+}
+
+.context-panel .icon {
+	align-self: center;
+	height: 2rem;
+	opacity: 0.6;
+}
+.context-panel .icon img {
+	height: 100%;
+}
+
+hr {
+	margin: 1em;
+	opacity: 0.4;
+}
+
+.next-contexts {
+	margin-left: 1rem;
+	margin-bottom: 0.25rem;
+	opacity: 0.3;
+	font-size: 11px;
+	color: #000000;
+	letter-spacing: 0.09px;
+}
+
+.context-item {
+	padding: 1rem;
+	padding-right: 1.5rem;
+	display: flex;
+	justify-content: space-between;
+	cursor: pointer !important;
+}
+
+.context-item:hover {
+	background-color: #e1e6eb;
+}
+
+.context-item img {
+	visibility: hidden;
+	height: 1rem;
+	align-self: center;
+	opacity: 0.6;
+}
+
+.context-item:hover img {
+	visibility: visible;
+}
+
+.context-item-description {
+	display: flex;
+}
+
+.context-item-color {
+	height: 1rem;
+	width: 1rem;
+	border-radius: 50%;
+	align-self: center;
+}
+
+.context-item-title {
+	font-size: 14px;
+	color: #272a29;
+}
+
+.context-item-time {
+	opacity: 0.6;
+	font-size: 12px;
+	color: #272a29;
+}

@@ -1,0 +1,16 @@
+{
+	"name": "jack",
+	"productName": "Jack",
+	"version": "1.0.0",
+	"main": "app.js",
+	"license": "ISC",
+	"author": "Andrej Pancik",
+	"scripts": {
+		"start": "electron .",
+		"package": "electron-packager ./ --platform=darwin --arch=x64 --out=out --icon=./icon.icns --overwrite"
+	},
+	"devDependencies": {
+		"electron-packager": "^14.1.1",
+		"electron": "^7.1.4"
+	}
+}
