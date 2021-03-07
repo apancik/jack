@@ -13,6 +13,8 @@ let model = {
 	},
 	active: true,
 	contexts: [
+		{ name: "Project Manager", seconds: 150, color: "#0094F7" },
+		{ name: "Break", seconds: 150, color: "#0094F7" },
 		{ name: "Designer", seconds: 150, color: "#0094F7" },
 		{ name: "Break", seconds: 120, color: "#83C737" },
 		{ name: "Programmer", seconds: 120, color: "#AB81F3" },

@@ -16,7 +16,9 @@ app.on("ready", () => {
 
 // Quit the app when the window is closed
 app.on("window-all-closed", () => {
-	app.quit()
+	if (process.platform !== "darwin") {
+		app.quit()
+	}
 })
 
 const createTray = () => {
@@ -60,7 +62,7 @@ const createWindow = () => {
 		webPreferences: {
 			// Prevents renderer process code from not running when window is hidden
 			backgroundThrottling: false,
-			nodeIntegration: true,
+			preload: path.join(app.getAppPath(), "window.js"),
 		},
 	})
 
