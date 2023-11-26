@@ -1,8 +1,0 @@
-[
-	{ "name": "Designer", "seconds": 150, "color": "#0094F7" },
-	{ "name": "Break", "seconds": 120, "color": "#83C737" },
-	{ "name": "Programmer", "seconds": 120, "color": "#AB81F3" },
-	{ "name": "Break", "seconds": 120, "color": "#83C737" },
-	{ "name": "Growth", "seconds": 120, "color": "#F74F00" },
-	{ "name": "Wrap-up", "seconds": 120, "color": "#83C737" }
-]

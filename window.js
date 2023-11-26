@@ -4,24 +4,22 @@ const { ipcRenderer, shell } = require("electron")
 // MODEL
 // =====
 
-const colors = ["#0094F7", "#F7C806", "#AB81F3", "#83C737", "#F74F00"]
+// const colors = ["#0094F7", "#F7C806", "#AB81F3", "#83C737", "#F74F00"]
 
 let model = {
 	currentContext: {
 		name: "Empty context",
 		seconds: 0,
 	},
-	active: true,
+	active: false,
 	contexts: [
-		{ name: "Project Manager", seconds: 150, color: "#0094F7" },
-		{ name: "Break", seconds: 150, color: "#0094F7" },
-		{ name: "Designer", seconds: 150, color: "#0094F7" },
-		{ name: "Break", seconds: 120, color: "#83C737" },
-		{ name: "Programmer", seconds: 120, color: "#AB81F3" },
-		{ name: "Break", seconds: 120, color: "#83C737" },
-		{ name: "Growth", seconds: 120, color: "#F74F00" },
-		{ name: "Wrap-up", seconds: 120, color: "#83C737" },
-	],
+		{ "name": "Designer", "seconds": 1200, "color": "#0094F7" },
+		{ "name": "Break", "seconds": 300, "color": "#83C737" },
+		{ "name": "Programmer", "seconds": 1200, "color": "#AB81F3" },
+		{ "name": "Break", "seconds": 300, "color": "#83C737" },
+		{ "name": "Growth", "seconds": 1200, "color": "#F74F00" },
+		{ "name": "Wrap-up", "seconds": 300, "color": "#83C737" }
+	]
 }
 
 // =======
@@ -119,7 +117,7 @@ const updateUpcoming = () => {
             <div class="context-item-time">${context.seconds} seconds</div>
           </div>
         </div>
-        <img src="assets/skip.png" />        
+        <img src="assets/skip.png" />
     </div>`
 
 		let el = document.createElement("div")
@@ -133,7 +131,6 @@ const updateUpcoming = () => {
 				.concat(model.contexts.slice(ord + 1))
 				.concat(model.contexts.slice(0, ord))
 			nextContext()
-			model.active = true
 		})
 	})
 }
@@ -150,13 +147,13 @@ const updateView = () => {
 						: ""
 				};"
 			>
-        <div>  
+        <div>
           <div class="context-panel-name">${model.currentContext.name}</div>
 				  <div class="context-panel-time">${model.currentContext.seconds} seconds</div>
         </div>
         <div class="icon">
           <img src="${model.active ? "assets/pause.png" : "assets/play.png"}" />
         </div>
-      </div>      
+      </div>
       `
 }

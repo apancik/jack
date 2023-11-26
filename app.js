@@ -32,6 +32,11 @@ const createTray = () => {
 		if (window.isVisible() && process.defaultApp && event.metaKey) {
 			window.openDevTools({ mode: "detach" })
 		}
+
+		// Close the app when alt clicked
+		if (event.altKey) {
+			app.quit()
+		}
 	})
 }
 
